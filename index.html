@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FrostLine Cold Chain | Temperature-Controlled Logistics</title>
+<link rel="icon" href="images/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#home"><img src="images/logo.svg" alt="FrostLine logo" width="36" height="36"> FrostLine Cold Chain</a>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="#track">Track shipment</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div>
+    <h1>Vaccines, dairy and seafood arrive at the temperature they left at.</h1>
+    <p>FrostLine runs refrigerated transport and cold storage across Gujarat and Maharashtra. Every shipment carries a temperature logger, so you can prove the cold chain never broke.</p>
+    <a class="btn" href="#track">Get Started: track a shipment</a>
+    <a class="btn ghost" href="#services">See services and prices</a>
+  </div>
+  <aside class="hero-card" aria-label="Live temperature example">
+    <span>Reefer truck GJ-06-CX-4412</span>
+    <strong>2.6 °C</strong>
+    <small>Safe range 2 to 8 °C. Updated 4 minutes ago.</small>
+  </aside>
+</section>
+
+<section id="about">
+  <h2>About FrostLine</h2>
+  <div class="grid two">
+    <p>FrostLine is a temperature-controlled logistics company based in Vadodara. We move and store goods that spoil or lose potency when they warm up, and we monitor temperature from pickup to delivery.</p>
+    <dl>
+      <dt>Target customers</dt><dd>Pharma distributors, dairies, seafood exporters, hospitals, restaurant chains and ice-cream makers.</dd>
+      <dt>Service area</dt><dd>Gujarat and Maharashtra, with partner lanes to Delhi NCR and Bengaluru.</dd>
+      <dt>Value proposition</dt><dd>Lower spoilage, a temperature record for every delivery, and an alert before a load goes out of range.</dd>
+    </dl>
+  </div>
+  <p class="note">Industry reference: <a href="https://nccd.gov.in" target="_blank" rel="noopener">National Centre for Cold-chain Development</a> (cold chain standards and policy) and <a href="https://www.fssai.gov.in" target="_blank" rel="noopener">FSSAI</a> (food safety rules our food customers must meet).</p>
+</section>
+
+<section id="services">
+  <h2>Services and prices</h2>
+  <table>
+    <thead><tr><th>Service</th><th>Description</th><th>Temperature</th><th>Price</th></tr></thead>
+    <tbody>
+      <tr><td>Chilled Local Delivery</td><td>Same-city refrigerated van, up to 500 kg</td><td>2 to 8 °C</td><td>₹1,800 per trip</td></tr>
+      <tr><td>Frozen Express</td><td>Priority intercity delivery, ice cream and seafood</td><td>-18 to -22 °C</td><td>₹32 per km</td></tr>
+      <tr><td>Pharma Cold Transport</td><td>Vaccine and medicine lanes with live logger</td><td>2 to 8 °C</td><td>₹28 per km</td></tr>
+      <tr><td>Cold Storage</td><td>Pallet storage with 24x7 monitoring</td><td>Chilled or frozen</td><td>₹450 per pallet per month</td></tr>
+    </tbody>
+  </table>
+  <p class="note">Need a quote? Use the <a href="#calc">cost calculator</a> or <a href="#contact">send an enquiry</a>.</p>
+</section>
+
+<section id="dashboard">
+  <h2>Operations dashboard</h2>
+  <p class="sub">What the operations manager needs to know right now.</p>
+  <div class="filters" role="group" aria-label="Filter by product type">
+    <button class="chip on" data-f="all">All cargo</button>
+    <button class="chip" data-f="pharma">Pharma</button>
+    <button class="chip" data-f="dairy">Dairy</button>
+    <button class="chip" data-f="seafood">Seafood</button>
+  </div>
+  <div class="kpis" id="kpis"></div>
+  <div class="chart-wrap">
+    <h3>On-time delivery rate by day (%)</h3>
+    <div id="chart" role="img" aria-label="Bar chart of on-time delivery percentage for the last seven days"></div>
+  </div>
+  <p class="note">Open the <a href="#track">shipment tracker</a> to check any single load.</p>
+</section>
+
+<section id="track">
+  <h2>Track a shipment</h2>
+  <p class="sub">Enter an order ID. Try TRK1025, TRK1026, TRK1027 or TRK1028.</p>
+  <form id="trackForm" class="inline">
+    <label for="oid">Order ID</label>
+    <input id="oid" placeholder="TRK1025" autocomplete="off" required>
+    <button class="btn" type="submit">Track order</button>
+  </form>
+  <div id="result" class="result" aria-live="polite">Results appear here.</div>
+</section>
+
+<section id="calc">
+  <h2>Cost calculator</h2>
+  <form id="calcForm" class="inline">
+    <label for="svc">Service</label>
+    <select id="svc"><option value="32">Frozen Express</option><option value="28">Pharma Cold Transport</option></select>
+    <label for="km">Distance (km)</label>
+    <input id="km" type="number" min="1" value="150">
+    <button class="btn" type="submit">Get estimate</button>
+  </form>
+  <p id="est" aria-live="polite"></p>
+</section>
+
+<section id="contact">
+  <h2>Contact and enquiry</h2>
+  <div class="grid two">
+    <dl>
+      <dt>Email</dt><dd><a href="mailto:ops@frostline.example">ops@frostline.example</a></dd>
+      <dt>Phone</dt><dd><a href="tel:+910000000000">+91 00000 00000</a></dd>
+      <dt>Location</dt><dd>Vadodara, Gujarat. <a href="https://www.google.com/maps/search/?api=1&query=cold+storage+Vadodara" target="_blank" rel="noopener">Open in Google Maps</a></dd>
+      <dt>Company profile</dt><dd><a href="https://www.linkedin.com/" target="_blank" rel="noopener">FrostLine on LinkedIn</a></dd>
+    </dl>
+    <form id="enqForm" class="stack">
+      <label for="n">Name</label><input id="n" required>
+      <label for="e">Email</label><input id="e" type="email" required>
+      <label for="m">What do you need to move or store?</label><textarea id="m" rows="3" required></textarea>
+      <button class="btn" type="submit">Send enquiry</button>
+      <p id="enqMsg" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer><p>FrostLine Cold Chain. Class project for ITBT. All data shown is sample data.</p></footer>
+<script src="script.js"></script>
+</body>
+</html>
